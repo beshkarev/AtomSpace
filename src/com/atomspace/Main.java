@@ -13,20 +13,22 @@ public class Main {
 
         ArrayList< Course > course = new ArrayList<>( );
         course.add( new Course( "JAVA", 90 ) );
-//        course.add( new Course( "C++", 90 ) );
+        course.add( new Course( "C++", 90 ) );
         course.add( new Course( "Artificial intelligence", 90 ) );
 
         Nastya.subscribe( atomSpace.getAdmin( ), course );
 
         attend( atomSpace.getAdmin(),
                 Nastya,
+                "C++",
                 true );
 
         showAttendCourses( atomSpace.getAdmin().getCourses( Nastya ) );
 
         attend( atomSpace.getAdmin(),
                 Nastya,
-                false );
+                "JAVA",
+                true );
 
         showAttendCourses( atomSpace.getAdmin().getCourses( Nastya ) );
 
@@ -34,8 +36,9 @@ public class Main {
 
     static void attend( Administrator admin,
                         Human resident,
+                        String course_name,
                         boolean visit ) {
-        admin.residentAttendanceCourse( resident, visit );
+        admin.residentAttendanceCourse( resident, course_name, visit );
     }
 
     static void showAttendCourses( ArrayList< Course > courses ) {

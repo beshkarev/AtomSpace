@@ -15,8 +15,9 @@ public class Resident implements Human {
     }
 
     public void attendance( Administrator admin,
+                            String course_name,
                             boolean visit ) {
-        admin.residentAttendanceCourse( this, visit );
+        admin.residentAttendanceCourse( this, course_name, visit );
     }
 
     public ArrayList<Course> getCourses( Human human ) {

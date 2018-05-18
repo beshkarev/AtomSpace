@@ -21,9 +21,12 @@ public class Administrator implements Human {
     }
 
     public void residentAttendanceCourse( Human resident,
+                                          String course_name,
                                           boolean visit ) {
         for ( Course course :  m_residents.get( resident ) ) {
-            course.setVisit( visit );
+            if ( course.getName( ).equals( course_name ) ) {
+                course.setVisit( visit );
+            }
         }
     }
 
