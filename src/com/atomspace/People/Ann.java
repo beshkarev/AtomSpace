@@ -8,13 +8,13 @@ public final class Ann extends Administrator {
         System.out.println( "Are you bored? Yes/No" );
 
         Scanner scanner = new Scanner( System.in );
-
-        if ( scanner.nextLine( ).equalsIgnoreCase( "Yes" ) ) {
+        String answer = scanner.nextLine( );
+        if ( answer.equalsIgnoreCase( "Yes" ) ) {
             System.out.println( "Ну ок" );
-        } else if ( scanner.nextLine( ).equalsIgnoreCase( "No" ) ) {
+        } else if ( answer.equalsIgnoreCase( "No" ) ) {
             System.out.println( "Огонь" );
         } else {
-            System.out.println("В смысле?");
+            System.out.println( "В смысле?" );
         }
     }
 
