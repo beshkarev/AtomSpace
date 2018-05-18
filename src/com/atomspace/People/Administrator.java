@@ -11,16 +11,16 @@ public class Administrator implements Human {
         m_residents = new HashMap<>( );
     }
 
-    public void subscribe( Human resident,
+    public final void subscribe( Human resident,
                     ArrayList<Course> courses ) {
         m_residents.put( resident, courses );
     }
 
-    public void unsubscribe( Human resident ) {
+    public final void unsubscribe( Human resident ) {
         m_residents.remove( resident );
     }
 
-    public void residentAttendanceCourse( Human resident,
+    public final void residentAttendanceCourse( Human resident,
                                           String course_name,
                                           boolean visit ) {
         for ( Course course :  m_residents.get( resident ) ) {
@@ -30,7 +30,7 @@ public class Administrator implements Human {
         }
     }
 
-    public ArrayList<Course> getCourses( Human human ) {
+    public final ArrayList<Course> getCourses( Human human ) {
         return m_residents.get( human );
     }
 

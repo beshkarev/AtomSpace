@@ -1,6 +1,7 @@
 package com.atomspace;
 
 import com.atomspace.People.Administrator;
+import com.atomspace.People.Ann;
 import com.atomspace.People.Human;
 import com.atomspace.People.Resident;
 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        AtomSpace atomSpace = new AtomSpace( new Administrator( ) );
+        AtomSpace atomSpace = new AtomSpace( new Ann( ) );
         Human Nastya = new Resident( );
 
         ArrayList< Course > course = new ArrayList<>( );
@@ -32,6 +33,7 @@ public class Main {
 
         showAttendCourses( atomSpace.getAdmin().getCourses( Nastya ) );
 
+        ((Ann)atomSpace.getAdmin()).meeting( );
     }
 
     static void attend( Administrator admin,
